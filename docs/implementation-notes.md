@@ -23,3 +23,4 @@
 - Added complete landing-page Open Graph and Twitter metadata with a static `/og.png` preview image.
 - Updated `/og.png` to a padded 1200x630 preview card for wide Open Graph renderers.
 - Updated the landing-page and social metadata description to “A shared calendar for you and your agent.”
+- Removed the extra landing-page explanatory line under the tagline.

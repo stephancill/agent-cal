@@ -50,9 +50,6 @@ app.get("/", (c) =>
   <body>
     <h1>agent-cal</h1>
     <p>A shared calendar for you and your agent.</p>
-    <p>
-      Your agent can create, update, and delete events; you can subscribe in Apple Calendar.
-    </p>
 
     <h2>How it works</h2>
     <ol>
