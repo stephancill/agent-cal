@@ -52,13 +52,6 @@ app.get("/", (c) =>
       and manage events for you.
     </p>
 
-    <h2>Create an event</h2>
-    <pre><code>python skills/agent-calendar/scripts/agent_calendar.py create-event \\
-  --profile default \\
-  --title "Dentist" \\
-  --starts-at "2026-07-20T10:00:00+02:00" \\
-  --ends-at "2026-07-20T11:00:00+02:00"</code></pre>
-
     <h2>Stats</h2>
     <ul>
       <li><strong>Events created:</strong> <span id="events-created">-</span></li>
