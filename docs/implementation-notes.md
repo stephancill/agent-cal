@@ -21,3 +21,4 @@
 - Removed the create-event example from the landing page.
 - Added the packaged skill archive at `/agent-calendar.skill` so agents can install the bundled CLI script with the skill.
 - Added complete landing-page Open Graph and Twitter metadata with a static `/og.png` preview image.
+- Updated `/og.png` to a padded 1200x630 preview card for wide Open Graph renderers.

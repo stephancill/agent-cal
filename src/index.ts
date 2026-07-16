@@ -36,9 +36,9 @@ app.get("/", (c) =>
     <meta property="og:site_name" content="agent-cal" />
     <meta property="og:image" content="https://agent-cal.stupidtech.net/og.png" />
     <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="agent-cal" />
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="agent-cal" />
     <meta
       name="twitter:description"
