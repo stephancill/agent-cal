@@ -81,6 +81,11 @@ app.get("/", (c) =>
       <li>CalDAV editing support can be added later on top of the calendar object store.</li>
     </ul>
 
+    <h2>Stats</h2>
+    <ul>
+      <li><strong>Events created:</strong> <span id="events-created">-</span></li>
+    </ul>
+
     <p>
       <a href="https://github.com/stephancill/agent-cal">github</a>
       -
@@ -90,11 +95,33 @@ app.get("/", (c) =>
       -
       <a href="https://stupidtech.net">stupidtech.net</a>
     </p>
+
+    <script>
+      fetch("/stats", { headers: { accept: "application/json" } })
+        .then((response) => response.json())
+        .then((payload) => {
+          const value = payload?.metrics?.eventsCreated;
+          if (typeof value === "number") {
+            document.getElementById("events-created").textContent = value.toLocaleString("en-US");
+          }
+        })
+        .catch(() => {
+          document.getElementById("events-created").textContent = "unavailable";
+        });
+    </script>
   </body>
 </html>`),
 );
 
 app.get("/health", (c) => c.json({ ok: true, service: "agent-cal" }));
+
+app.get("/stats", async (c) => {
+  const row = await c.env.DB.prepare(
+    "SELECT COUNT(*) AS eventsCreated FROM calendar_objects WHERE object_type = 'VEVENT'",
+  ).first<{ eventsCreated: number }>();
+
+  return c.json({ metrics: { eventsCreated: row?.eventsCreated ?? 0 } });
+});
 
 app.post(
   "/v1/calendars",

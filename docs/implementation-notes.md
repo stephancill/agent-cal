@@ -14,3 +14,4 @@
 - Added a minimal landing page at `GET /` in the style of other `stupidtech.net` services.
 - Added a statically served favicon at `/favicon.ico` from `public/favicon.ico` via the Workers assets binding.
 - Added `/SKILL.md` as a static skill link in the Agent Cal footer via a symlink to the canonical skill file.
+- Added `GET /stats` and a landing-page metric for total events created.
