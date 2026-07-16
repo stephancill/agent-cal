@@ -11,3 +11,5 @@
 - Deployed production Worker at `https://agent-cal.stupidtech.net`.
 - Verified production health, setup idempotency, event creation, ICS feed generation, deletion, and empty event list after deletion.
 - Added project README, repository metadata, and agent instructions for future changes.
+- Added a minimal landing page at `GET /` in the style of other `stupidtech.net` services.
+- Added a statically served favicon at `/favicon.ico` from `public/favicon.ico` via the Workers assets binding.

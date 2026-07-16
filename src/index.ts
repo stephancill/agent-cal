@@ -14,6 +14,84 @@ import type { Env } from "./types";
 
 const app = new Hono<{ Bindings: Env }>();
 
+app.get("/", (c) =>
+  c.html(`<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>agent-cal.stupidtech.net</title>
+    <meta property="og:title" content="agent-cal.stupidtech.net" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://agent-cal.stupidtech.net/" />
+    <meta
+      property="og:description"
+      content="A shared calendar API for AI agents, with Apple Calendar subscriptions."
+    />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <h1>agent-cal.stupidtech.net</h1>
+    <p>A shared calendar API for AI agents.</p>
+    <p>
+      Give an agent a private update token and a user a read-only Apple Calendar subscription URL.
+      The agent can create, update, and delete events for you.
+    </p>
+
+    <h2>How it works</h2>
+    <ol>
+      <li>An agent creates a calendar once.</li>
+      <li>The agent persists the returned update token.</li>
+      <li>You subscribe to the returned <code>webcal://</code> URL in Apple Calendar.</li>
+      <li>The agent manages events through the API; your calendar app refreshes the feed.</li>
+    </ol>
+
+    <h2>Endpoints</h2>
+    <ul>
+      <li><code>GET /health</code></li>
+      <li><code>POST /v1/calendars</code></li>
+      <li><code>GET /v1/calendars/:calendarId</code></li>
+      <li><code>GET /v1/calendars/:calendarId/events</code></li>
+      <li><code>POST /v1/calendars/:calendarId/events</code></li>
+      <li><code>PUT /v1/calendars/:calendarId/events/:eventId</code></li>
+      <li><code>DELETE /v1/calendars/:calendarId/events/:eventId</code></li>
+      <li><code>GET /calendars/:calendarId/:feedSecret/calendar.ics</code></li>
+    </ul>
+
+    <h2>Setup</h2>
+    <p>Use the bundled skill CLI:</p>
+    <pre><code>python skills/agent-calendar/scripts/agent_calendar.py setup \\
+  --api-base https://agent-cal.stupidtech.net \\
+  --profile default \\
+  --name "Agent Calendar" \\
+  --timezone "UTC"</code></pre>
+
+    <h2>Create an event</h2>
+    <pre><code>python skills/agent-calendar/scripts/agent_calendar.py create-event \\
+  --profile default \\
+  --title "Dentist" \\
+  --starts-at "2026-07-20T10:00:00+02:00" \\
+  --ends-at "2026-07-20T11:00:00+02:00"</code></pre>
+
+    <h2>Notes</h2>
+    <ul>
+      <li>Apple Calendar subscriptions are read-only.</li>
+      <li>Calendar feed URLs are unauthenticated but unguessable.</li>
+      <li>Update tokens should be kept private by the agent.</li>
+      <li>CalDAV editing support can be added later on top of the calendar object store.</li>
+    </ul>
+
+    <p>
+      <a href="https://github.com/stephancill/agent-cal">github</a>
+      -
+      <a href="https://x.com/stephancill">twitter</a>
+      -
+      <a href="https://stupidtech.net">stupidtech.net</a>
+    </p>
+  </body>
+</html>`),
+);
+
 app.get("/health", (c) => c.json({ ok: true, service: "agent-cal" }));
 
 app.post(
