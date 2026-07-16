@@ -23,13 +23,13 @@ app.get("/", (c) =>
     <title>agent-cal</title>
     <meta
       name="description"
-      content="Give an AI agent access to a shared calendar so it can create, update, and delete events for you."
+      content="A shared calendar for you and your agent."
     />
     <link rel="canonical" href="https://agent-cal.stupidtech.net/" />
     <meta property="og:title" content="agent-cal" />
     <meta
       property="og:description"
-      content="Give an AI agent access to a shared calendar so it can create, update, and delete events for you."
+      content="A shared calendar for you and your agent."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://agent-cal.stupidtech.net/" />
@@ -42,17 +42,16 @@ app.get("/", (c) =>
     <meta name="twitter:title" content="agent-cal" />
     <meta
       name="twitter:description"
-      content="Give an AI agent access to a shared calendar so it can create, update, and delete events for you."
+      content="A shared calendar for you and your agent."
     />
     <meta name="twitter:image" content="https://agent-cal.stupidtech.net/og.png" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   </head>
   <body>
     <h1>agent-cal</h1>
-    <p>A shared calendar API for AI agents.</p>
+    <p>A shared calendar for you and your agent.</p>
     <p>
-      Give an agent a private update token and a user a read-only Apple Calendar subscription URL.
-      The agent can create, update, and delete events for you.
+      Your agent can create, update, and delete events; you can subscribe in Apple Calendar.
     </p>
 
     <h2>How it works</h2>
