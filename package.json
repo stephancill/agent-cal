@@ -1,0 +1,33 @@
+{
+  "name": "agent-cal",
+  "version": "0.1.0",
+  "description": "Cloudflare Worker API for AI-agent-owned calendars with Apple Calendar iCalendar subscriptions.",
+  "private": true,
+  "type": "module",
+  "homepage": "https://agent-cal.stupidtech.net",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephancill/agent-cal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stephancill/agent-cal/issues"
+  },
+  "scripts": {
+    "dev": "wrangler dev --local --persist-to .wrangler/state",
+    "deploy": "wrangler deploy",
+    "format": "prettier --write .",
+    "lint": "tsc --noEmit",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "@hono/zod-validator": "latest",
+    "hono": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "latest",
+    "prettier": "latest",
+    "typescript": "latest",
+    "wrangler": "latest"
+  }
+}

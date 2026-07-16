@@ -1,0 +1,13 @@
+name = "agent-cal"
+main = "src/index.ts"
+compatibility_date = "2026-07-15"
+
+routes = [
+  { pattern = "agent-cal.stupidtech.net", custom_domain = true }
+]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "agent-cal"
+database_id = "87571f5b-3d2b-48f6-b4db-6c75c36e6a52"
+migrations_dir = "migrations"
