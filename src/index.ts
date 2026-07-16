@@ -47,12 +47,10 @@ app.get("/", (c) =>
     </ol>
 
     <h2>Setup</h2>
-    <p>Use the bundled skill CLI:</p>
-    <pre><code>python skills/agent-calendar/scripts/agent_calendar.py setup \\
-  --api-base https://agent-cal.stupidtech.net \\
-  --profile default \\
-  --name "Agent Calendar" \\
-  --timezone "UTC"</code></pre>
+    <p>
+      Ask your agent to use the <a href="/SKILL.md">agent-calendar skill</a> to create a calendar
+      and manage events for you.
+    </p>
 
     <h2>Create an event</h2>
     <pre><code>python skills/agent-calendar/scripts/agent_calendar.py create-event \\

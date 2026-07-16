@@ -17,3 +17,4 @@
 - Added `GET /stats` and a landing-page metric for total events created.
 - Replaced the statically served favicon with `New Project (18).png` converted to `public/favicon.ico`.
 - Removed the endpoint list and notes section from the landing page to keep it concise.
+- Changed the setup section to link to `/SKILL.md` and tell users to ask their agent to use the skill.
