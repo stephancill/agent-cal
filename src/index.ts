@@ -46,18 +46,6 @@ app.get("/", (c) =>
       <li>The agent manages events through the API; your calendar app refreshes the feed.</li>
     </ol>
 
-    <h2>Endpoints</h2>
-    <ul>
-      <li><code>GET /health</code></li>
-      <li><code>POST /v1/calendars</code></li>
-      <li><code>GET /v1/calendars/:calendarId</code></li>
-      <li><code>GET /v1/calendars/:calendarId/events</code></li>
-      <li><code>POST /v1/calendars/:calendarId/events</code></li>
-      <li><code>PUT /v1/calendars/:calendarId/events/:eventId</code></li>
-      <li><code>DELETE /v1/calendars/:calendarId/events/:eventId</code></li>
-      <li><code>GET /calendars/:calendarId/:feedSecret/calendar.ics</code></li>
-    </ul>
-
     <h2>Setup</h2>
     <p>Use the bundled skill CLI:</p>
     <pre><code>python skills/agent-calendar/scripts/agent_calendar.py setup \\
@@ -72,14 +60,6 @@ app.get("/", (c) =>
   --title "Dentist" \\
   --starts-at "2026-07-20T10:00:00+02:00" \\
   --ends-at "2026-07-20T11:00:00+02:00"</code></pre>
-
-    <h2>Notes</h2>
-    <ul>
-      <li>Apple Calendar subscriptions are read-only.</li>
-      <li>Calendar feed URLs are unauthenticated but unguessable.</li>
-      <li>Update tokens should be kept private by the agent.</li>
-      <li>CalDAV editing support can be added later on top of the calendar object store.</li>
-    </ul>
 
     <h2>Stats</h2>
     <ul>

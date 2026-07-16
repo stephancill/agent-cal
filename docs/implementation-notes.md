@@ -15,3 +15,5 @@
 - Added a statically served favicon at `/favicon.ico` from `public/favicon.ico` via the Workers assets binding.
 - Added `/SKILL.md` as a static skill link in the Agent Cal footer via a symlink to the canonical skill file.
 - Added `GET /stats` and a landing-page metric for total events created.
+- Replaced the statically served favicon with `New Project (18).png` converted to `public/favicon.ico`.
+- Removed the endpoint list and notes section from the landing page to keep it concise.
