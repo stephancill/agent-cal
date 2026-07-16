@@ -13,3 +13,4 @@
 - Added project README, repository metadata, and agent instructions for future changes.
 - Added a minimal landing page at `GET /` in the style of other `stupidtech.net` services.
 - Added a statically served favicon at `/favicon.ico` from `public/favicon.ico` via the Workers assets binding.
+- Added `/SKILL.md` as a static skill link in the Agent Cal footer via a symlink to the canonical skill file.

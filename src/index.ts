@@ -20,8 +20,8 @@ app.get("/", (c) =>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>agent-cal.stupidtech.net</title>
-    <meta property="og:title" content="agent-cal.stupidtech.net" />
+    <title>agent-cal</title>
+    <meta property="og:title" content="agent-cal" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://agent-cal.stupidtech.net/" />
     <meta
@@ -31,7 +31,7 @@ app.get("/", (c) =>
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   </head>
   <body>
-    <h1>agent-cal.stupidtech.net</h1>
+    <h1>agent-cal</h1>
     <p>A shared calendar API for AI agents.</p>
     <p>
       Give an agent a private update token and a user a read-only Apple Calendar subscription URL.
@@ -83,6 +83,8 @@ app.get("/", (c) =>
 
     <p>
       <a href="https://github.com/stephancill/agent-cal">github</a>
+      -
+      <a href="/SKILL.md">skill</a>
       -
       <a href="https://x.com/stephancill">twitter</a>
       -
