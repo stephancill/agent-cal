@@ -21,13 +21,30 @@ app.get("/", (c) =>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>agent-cal</title>
+    <meta
+      name="description"
+      content="Give an AI agent access to a shared calendar so it can create, update, and delete events for you."
+    />
+    <link rel="canonical" href="https://agent-cal.stupidtech.net/" />
     <meta property="og:title" content="agent-cal" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://agent-cal.stupidtech.net/" />
     <meta
       property="og:description"
-      content="A shared calendar API for AI agents, with Apple Calendar subscriptions."
+      content="Give an AI agent access to a shared calendar so it can create, update, and delete events for you."
     />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://agent-cal.stupidtech.net/" />
+    <meta property="og:site_name" content="agent-cal" />
+    <meta property="og:image" content="https://agent-cal.stupidtech.net/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="1200" />
+    <meta property="og:image:alt" content="agent-cal" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="agent-cal" />
+    <meta
+      name="twitter:description"
+      content="Give an AI agent access to a shared calendar so it can create, update, and delete events for you."
+    />
+    <meta name="twitter:image" content="https://agent-cal.stupidtech.net/og.png" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   </head>
   <body>
