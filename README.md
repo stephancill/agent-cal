@@ -10,6 +10,7 @@ Cloudflare Worker API for AI-agent-owned calendars. Agents manage calendars thro
 - Worker: `agent-cal`
 - D1 database: `agent-cal`
 - Agent skill source: `skills/agent-calendar`
+- Packaged agent skill: https://agent-cal.stupidtech.net/agent-calendar.skill
 
 ## API
 

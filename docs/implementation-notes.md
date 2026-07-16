@@ -19,3 +19,4 @@
 - Removed the endpoint list and notes section from the landing page to keep it concise.
 - Changed the setup section to link to `/SKILL.md` and tell users to ask their agent to use the skill.
 - Removed the create-event example from the landing page.
+- Added the packaged skill archive at `/agent-calendar.skill` so agents can install the bundled CLI script with the skill.

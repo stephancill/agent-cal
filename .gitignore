@@ -1,5 +1,7 @@
 node_modules/
 .wrangler/
 *.skill
+!agent-calendar.skill
+!public/*.skill
 __pycache__/
 *.pyc

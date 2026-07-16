@@ -48,8 +48,8 @@ app.get("/", (c) =>
 
     <h2>Setup</h2>
     <p>
-      Ask your agent to use the <a href="/SKILL.md">agent-calendar skill</a> to create a calendar
-      and manage events for you.
+      Ask your agent to install and use the <a href="/agent-calendar.skill">agent-calendar skill</a>
+      to create a calendar and manage events for you.
     </p>
 
     <h2>Stats</h2>
@@ -60,7 +60,7 @@ app.get("/", (c) =>
     <p>
       <a href="https://github.com/stephancill/agent-cal">github</a>
       -
-      <a href="/SKILL.md">skill</a>
+      <a href="/agent-calendar.skill">skill</a>
       -
       <a href="https://x.com/stephancill">twitter</a>
       -
