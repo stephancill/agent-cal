@@ -60,11 +60,11 @@ app.get("/", (c) =>
     <p>
       <a href="https://github.com/stephancill/agent-cal">github</a>
       -
-      <a href="/agent-calendar.skill">skill</a>
-      -
       <a href="https://x.com/stephancill">twitter</a>
       -
       <a href="https://stupidtech.net">stupidtech.net</a>
+      -
+      <a href="/agent-calendar.skill">skill</a>
     </p>
 
     <script>
