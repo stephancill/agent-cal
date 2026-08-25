@@ -14,8 +14,12 @@ export function eventToIcs({
     "BEGIN:VEVENT",
     `UID:${escapeText(uid)}`,
     `DTSTAMP:${toIcsDateTime(now)}`,
-    `DTSTART:${toIcsDateTime(event.startsAt)}`,
-    `DTEND:${toIcsDateTime(event.endsAt)}`,
+    event.allDay
+      ? `DTSTART;VALUE=DATE:${toIcsDate(event.startsAt)}`
+      : `DTSTART:${toIcsDateTime(event.startsAt)}`,
+    event.allDay
+      ? `DTEND;VALUE=DATE:${toIcsDate(event.endsAt)}`
+      : `DTEND:${toIcsDateTime(event.endsAt)}`,
     `SUMMARY:${escapeText(event.title)}`,
     event.description ? `DESCRIPTION:${escapeText(event.description)}` : null,
     event.location ? `LOCATION:${escapeText(event.location)}` : null,
@@ -62,6 +66,10 @@ export function toIcsDateTime(value: string): string {
     .replaceAll("-", "")
     .replaceAll(":", "")
     .replace(/\.\d{3}Z$/, "Z");
+}
+
+export function toIcsDate(value: string): string {
+  return value.replaceAll("-", "");
 }
 
 function foldLines(lines: string[]): string[] {

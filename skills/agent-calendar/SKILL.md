@@ -42,6 +42,12 @@ Create an event:
 python scripts/agent_calendar.py create-event --profile default --title "Dentist" --starts-at "2026-07-20T10:00:00+02:00" --ends-at "2026-07-20T11:00:00+02:00" --description "Bring insurance card" --location "Cape Town"
 ```
 
+Create an all-day event with date-only values. The end date is exclusive, so this event covers 6-13 September:
+
+```bash
+python scripts/agent_calendar.py create-event --profile default --title "Holiday" --all-day --starts-at "2026-09-06" --ends-at "2026-09-14"
+```
+
 List events:
 
 ```bash
@@ -66,4 +72,6 @@ python scripts/agent_calendar.py delete-event --profile default --event-id evt_.
 - Use stored profiles instead of manually passing tokens when possible.
 - Use `setup --force` only when the user intentionally wants a replacement calendar.
 - Do not edit generated `.ics` feeds directly; use API/CLI event commands.
+- Use date-only `--starts-at` and `--ends-at` values with `--all-day`; never approximate an all-day event with midnight date-times.
+- Treat an all-day event's end date as exclusive. To cover 6-13 September, use an end date of 14 September.
 - The subscription calendar is read-only in Apple Calendar until CalDAV support is added.

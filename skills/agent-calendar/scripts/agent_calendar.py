@@ -133,6 +133,7 @@ def add_event_args(parser):
     parser.add_argument("--location")
     parser.add_argument("--starts-at", required=True)
     parser.add_argument("--ends-at", required=True)
+    parser.add_argument("--all-day", action="store_true", help="Create an all-day event using date-only start and exclusive end values")
     parser.add_argument("--timezone", default="UTC")
     parser.add_argument("--status", choices=["confirmed", "tentative", "cancelled"], default="confirmed")
     parser.add_argument("--rrule")
@@ -320,6 +321,8 @@ def event_payload(args):
         value = getattr(args, attr)
         if value:
             payload[key] = value
+    if args.all_day:
+        payload["allDay"] = True
     return payload
 
 

@@ -9,7 +9,7 @@ import {
   upsertEvent,
 } from "./db";
 import { calendarFeed } from "./ical";
-import { createCalendarSchema, eventSchema } from "./schema";
+import { createCalendarSchema, eventSchema, isDateOnly } from "./schema";
 import type { Env } from "./types";
 
 const app = new Hono<{ Bindings: Env }>();
@@ -264,6 +264,7 @@ function toApiEvent(object: {
     location: object.location,
     startsAt: object.starts_at,
     endsAt: object.ends_at,
+    allDay: isDateOnly(object.starts_at),
     timezone: object.timezone,
     status: object.status,
     etag: object.etag,

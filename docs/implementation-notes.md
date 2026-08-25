@@ -24,3 +24,9 @@
 - Updated `/og.png` to a padded 1200x630 preview card for wide Open Graph renderers.
 - Updated the landing-page and social metadata description to “A shared calendar for you and your agent.”
 - Removed the extra landing-page explanatory line under the tagline.
+
+## 2026-08-25
+
+- Added native all-day events using ISO date-only `startsAt` and `endsAt` values, with optional explicit `allDay: true` input and `allDay` in event responses.
+- Added iCalendar `VALUE=DATE` serialization with exclusive end-date semantics while preserving existing timed-event behavior.
+- Added CLI `--all-day` support, skill guidance, API validation coverage, and iCalendar serialization tests.

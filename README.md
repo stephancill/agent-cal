@@ -25,6 +25,17 @@ Cloudflare Worker API for AI-agent-owned calendars. Agents manage calendars thro
 
 Calendar setup returns an `updateToken`, `subscribeUrl`, and `webcalUrl`. Keep `updateToken` private; share only `webcalUrl` with users.
 
+Event `startsAt` and `endsAt` values may be offset ISO date-times or ISO dates. Date-only values create a native all-day event; `endsAt` is exclusive:
+
+```json
+{
+  "title": "Holiday",
+  "startsAt": "2026-09-06",
+  "endsAt": "2026-09-14",
+  "allDay": true
+}
+```
+
 ## Skill CLI
 
 The bundled skill includes a Python CLI that manages local credentials automatically:
@@ -45,6 +56,17 @@ python skills/agent-calendar/scripts/agent_calendar.py create-event \
   --title "Dentist" \
   --starts-at "2026-07-20T10:00:00+02:00" \
   --ends-at "2026-07-20T11:00:00+02:00"
+```
+
+Create an all-day event. `--ends-at` is the exclusive end date, so this event covers 6-13 September:
+
+```bash
+python skills/agent-calendar/scripts/agent_calendar.py create-event \
+  --profile default \
+  --title "Holiday" \
+  --all-day \
+  --starts-at "2026-09-06" \
+  --ends-at "2026-09-14"
 ```
 
 ## Development
