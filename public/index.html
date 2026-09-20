@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>agent-cal</title>
+    <meta
+      name="description"
+      content="A shared calendar for you and your agent."
+    />
+    <link rel="canonical" href="https://agent-cal.stupidtech.net/" />
+    <meta property="og:title" content="agent-cal" />
+    <meta
+      property="og:description"
+      content="A shared calendar for you and your agent."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://agent-cal.stupidtech.net/" />
+    <meta property="og:site_name" content="agent-cal" />
+    <meta
+      property="og:image"
+      content="https://agent-cal.stupidtech.net/og.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="agent-cal" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="agent-cal" />
+    <meta
+      name="twitter:description"
+      content="A shared calendar for you and your agent."
+    />
+    <meta
+      name="twitter:image"
+      content="https://agent-cal.stupidtech.net/og.png"
+    />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        max-width: 46rem;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        line-height: 1.6;
+      }
+      code,
+      pre {
+        background: #f4f4f4;
+        padding: 0.15rem 0.35rem;
+        border-radius: 4px;
+      }
+      pre {
+        padding: 1rem;
+        overflow: auto;
+      }
+      form {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      input,
+      button {
+        font: inherit;
+      }
+      button {
+        padding: 0.25rem 0.75rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>agent-cal</h1>
+    <p>A shared calendar for you and your agent.</p>
+
+    <h2>How it works</h2>
+    <ol>
+      <li>An agent creates a calendar once.</li>
+      <li>The agent persists the returned update token.</li>
+      <li>
+        You subscribe to the returned <code>webcal://</code> URL in Apple
+        Calendar.
+      </li>
+      <li>
+        The agent manages events through the API; your calendar app refreshes
+        the feed.
+      </li>
+    </ol>
+
+    <h2>Setup</h2>
+    <p>
+      Ask your agent to install and use the
+      <a href="/agent-calendar.skill">agent-calendar skill</a>
+      to create a calendar and manage events for you.
+    </p>
+
+    <h2>Stats</h2>
+    <ul>
+      <li>
+        <strong>Events created:</strong> <span id="events-created">-</span>
+      </li>
+    </ul>
+
+    <p>
+      <a href="https://github.com/stephancill/agent-cal">github</a>
+      -
+      <a href="https://x.com/stephancill">twitter</a>
+      -
+      <a href="https://stupidtech.net">stupidtech.net</a>
+      -
+      <a href="/agent-calendar.skill">skill</a>
+    </p>
+
+    <script>
+      fetch("/stats", { headers: { accept: "application/json" } })
+        .then((response) => response.json())
+        .then((payload) => {
+          const value = payload?.metrics?.eventsCreated;
+          if (typeof value === "number") {
+            document.getElementById("events-created").textContent =
+              value.toLocaleString("en-US");
+          }
+        })
+        .catch(() => {
+          document.getElementById("events-created").textContent = "unavailable";
+        });
+    </script>
+  </body>
+</html>

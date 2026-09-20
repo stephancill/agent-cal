@@ -30,3 +30,9 @@
 - Added native all-day events using ISO date-only `startsAt` and `endsAt` values, with optional explicit `allDay: true` input and `allDay` in event responses.
 - Added iCalendar `VALUE=DATE` serialization with exclusive end-date semantics while preserving existing timed-event behavior.
 - Added CLI `--all-day` support, skill guidance, API validation coverage, and iCalendar serialization tests.
+
+## 2026-09-20
+
+- Restyled the landing page with the shared `stupidtech.net` web styling (system-ui font, centered 46rem column, light-gray `code`/`pre` blocks).
+- Moved the landing page out of `src/index.ts` into `public/index.html`, served by the static assets binding, and removed `/` from `run_worker_first` so the asset server handles the root path.
+- Added `public/favicon.png` and `public/apple-touch-icon.png` generated from the calendar icon source, and linked them alongside the existing `favicon.ico` in the page head.
